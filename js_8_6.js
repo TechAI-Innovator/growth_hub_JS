@@ -1,58 +1,66 @@
-// const profile = {
-//     name:"Adu Ayomide",
-//     can_swim: true,
-//     laptop:{
-//         size: "small",
-//         color: "black",
-//         model: "macbook pro",
-//         year: 2022
-//     },
-//     hobbies:["ball", "singing", "dancing", "games"]
-// }
-
-
-// console.log(typeof profile.hobbies)
-
-
-// let a = 10, b=3;
-// console.log(a+b, a-b, a*b, a/b, a%b, a**b)
-
-// console.log(5=="5");
-// console.log(5==="5");
-
-// console.log("True"=="true");
-
-
-// user_age = 18;
-
-// if(user_age >= 18){
-//     console.log("You are eligible to vote");
-// }else{
-//     console.log("You are not eligible to vote");
-// }
-
-
-
-// user_age = 18;
-
-// result = user_age > 18 ? "You are eligible": "You are not eligible"
-// console.log(result)
-
-
-
-//  x = 5; x++;
-// console.log(x);
-//  z = x;
-// console.log(z);
-
-
-let num = 3;
+// 1
 for (let i = 1; i<=12; i++) {
-    console.log(num, "x", i, "=", num*i);
+    for (let j = 1; j <= 12; j++) {
+    console.log(i, "x", j, "=", j*i);
+}
 }
 
-let num1 = 10, count = 1;
-while (count<13) {
-    console.log(`${num1} X ${count} = ${num1*count}`);
-    count++;
+
+// 2
+let max = 12;
+let output = "";
+
+for (let i = 1; i <= max; i++) {
+  for (let j = 1; j <= max; j++) {
+    output += `${j} × ${i} = ${j * i}  \t`;
+  }
+  output += "\n"; 
+}
+
+console.log(output);
+
+
+// 3
+let sumEven = 0;
+let sumOdd = 0;
+let sumMultiple3 = 0;
+let sumMultiple5 = 0;
+let sumPrime = 0;
+
+for (let i = 1; i <= 100; i++) {
+  // Even numbers
+  if (i % 2 === 0) sumEven += i;
+
+  // Odd numbers
+  if (i % 2 !== 0) sumOdd += i;
+
+  // Multiples of 3
+  if (i % 3 === 0) sumMultiple3 += i;
+
+  // Multiples of 5
+  if (i % 5 === 0) sumMultiple5 += i;
+
+  // Prime numbers (optimized check)
+  let count = 0;
+  for (let j = 1; j <= i; j++) {
+    if (i % j === 0) count++;
+  }
+  if (count === 2) sumPrime += i;
+}
+
+console.log("Sum of even numbers:", sumEven);
+console.log("Sum of odd numbers:", sumOdd);
+console.log("Sum of multiples of 3:", sumMultiple3);
+console.log("Sum of multiples of 5:", sumMultiple5);
+console.log("Sum of prime numbers:", sumPrime);
+
+// 4
+let a = 0;
+let b = 1;
+
+while (b <= 100) {
+  console.log(b);
+  let next = a + b;
+  a = b;
+  b = next;
 }
